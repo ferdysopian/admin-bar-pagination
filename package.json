@@ -1,0 +1,47 @@
+{
+  "name": "admin-bar-pagination",
+  "version": "1.0.0",
+  "description": "WordPress plugin that adds pagination to the admin toolbar",
+  "main": "admin-bar-pagination.php",
+  "scripts": {
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:pot && npm run build:plugin && npm run zip",
+    "build:css": "node build-scripts/minify-css.js",
+    "build:js": "node build-scripts/minify-js.js",
+    "build:pot": "node build-scripts/generate-pot.js",
+    "build:plugin": "node build-scripts/build.js",
+    "zip": "node build-scripts/zip.js",
+    "dev": "npm run watch",
+    "watch": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
+    "watch:css": "nodemon --watch assets/css/admin-bar-pagination.css --exec \"npm run build:css\"",
+    "watch:js": "nodemon --watch assets/js/admin-bar-pagination.js --exec \"npm run build:js\"",
+    "clean": "rimraf build assets/css/*.min.css assets/js/*.min.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "admin",
+    "toolbar",
+    "pagination"
+  ],
+  "author": "Ferdy Sopian",
+  "author_url": "https://ferdysopian.github.io/",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "archiver": "^6.0.1",
+    "clean-css": "^4.2.3",
+    "concurrently": "^8.2.2",
+    "fs-extra": "^11.1.1",
+    "nodemon": "^3.0.2",
+    "uglify-js": "^3.17.4",
+    "rimraf": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferdysopian/admin-bar-pagination.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ferdysopian/admin-bar-pagination/issues"
+  },
+  "homepage": "https://github.com/ferdysopian/admin-bar-pagination#readme"
+}

@@ -1,0 +1,180 @@
+/**
+ * CSS for the admin bar pagination
+ * 
+ * Fixes cluttered admin toolbar issues
+ * @package AdminBarPagination
+ * @version 1.0.0
+ */
+
+#wp-toolbar {
+  display: flex;
+  position: relative;
+}
+
+ul.ab-top-menu {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+ul.ab-top-menu li {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+ul.ab-top-menu.ab-top-secondary {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* Clean Pagination controls - matches WordPress admin bar style */
+.wp-admin-bar-pagination {
+  display: flex !important;
+  align-items: center;
+  margin: 0 10px !important;
+  height: 32px;
+}
+
+.wp-admin-bar-pagination button {
+  background: #0073aa;
+  color: white;
+  border: none;
+  padding: 0;
+  margin: 0 1px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 24px !important;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.wp-admin-bar-pagination button:hover {
+  background: #005a87;
+}
+
+.wp-admin-bar-pagination button:disabled {
+  background: #555;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.wp-admin-bar-pagination .page-indicator {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 6px;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  min-width: 32px;
+  text-align: center;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* Hidden items */
+.wp-admin-bar-hidden {
+  display: none !important;
+}
+
+/* Always visible items */
+.wp-admin-bar-always-visible:not(#wp-admin-bar-menu-toggle) {
+  display: block !important;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 782px) {
+  .wp-admin-bar-pagination {
+    margin: 0 5px !important;
+    height: 28px;
+  }
+
+  .wp-admin-bar-pagination button {
+    width: 28px !important;
+    height: 28px;
+    font-size: 18px;
+    border-radius: 3px;
+    margin: 0 2px;
+    min-width: 28px;
+    touch-action: manipulation;
+    box-sizing: border-box;
+  }
+
+  .wp-admin-bar-pagination .page-indicator {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 8px;
+    padding: 3px 8px;
+    min-width: 36px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    line-height: 1.3;
+    box-sizing: border-box;
+  }
+
+  /* Better touch targets */
+  .wp-admin-bar-pagination button:active {
+    background: #005a87;
+    transform: scale(0.95);
+  }
+
+  /* Disabled state for mobile */
+  .wp-admin-bar-pagination button:disabled {
+    background: #666;
+    opacity: 0.4;
+    transform: none;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .wp-admin-bar-pagination {
+    margin: 0 3px !important;
+    height: 26px;
+  }
+
+  .wp-admin-bar-pagination button {
+    width: 26px !important;
+    height: 26px;
+    font-size: 16px;
+    margin: 0 1px;
+    box-sizing: border-box;
+  }
+
+  .wp-admin-bar-pagination .page-indicator {
+    font-size: 11px;
+    margin: 0 6px;
+    padding: 2px 6px;
+    min-width: 32px;
+    box-sizing: border-box;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 782px) and (orientation: landscape) {
+  .wp-admin-bar-pagination {
+    height: 24px;
+  }
+
+  .wp-admin-bar-pagination button {
+    width: 24px !important;
+    height: 24px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .wp-admin-bar-pagination .page-indicator {
+    font-size: 11px;
+    padding: 2px 6px;
+    min-width: 30px;
+    box-sizing: border-box;
+  }
+}
