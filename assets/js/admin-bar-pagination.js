@@ -17,7 +17,7 @@
         '#wp-admin-bar-menu-toggle'
     ];
     
-    const itemsPerPage = (typeof abpSettings !== 'undefined' && abpSettings.itemsPerPage) ? parseInt(abpSettings.itemsPerPage, 10) : 3;
+    const itemsPerPage = (typeof admbarpgnSettings !== 'undefined' && admbarpgnSettings.itemsPerPage) ? parseInt(admbarpgnSettings.itemsPerPage, 10) : 3;
     let currentPage = 0;
     let paginatableItems = [];
     

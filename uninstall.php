@@ -8,14 +8,14 @@
  * @package AdminBarPagination
  */
 
-// If uninstall not called from WordPress, exit
+// If uninstall not called from WordPress, exit.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-// Delete plugin options
+// Delete plugin options.
 if ( is_multisite() ) {
-	delete_site_option( 'abp_network_settings' );
+	delete_site_option( 'admbarpgn_network_settings' );
 } else {
-	delete_option( 'abp_settings' );
+	delete_option( 'admbarpgn_settings' );
 }

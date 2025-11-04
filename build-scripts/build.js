@@ -19,7 +19,8 @@ async function buildPlugin() {
             'admin-bar-pagination.php',
             'uninstall.php',
             'readme.txt',
-            'languages/'
+            'languages/',
+            'inc/'
         ];
         
         for (const file of mainFiles) {
