@@ -249,9 +249,15 @@ class Admin {
 		if ( isset( $_POST['submit'] ) && isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'admin_bar_pagination_options-options' ) ) {
 			if ( is_multisite() && current_user_can( 'manage_network_options' ) ) {
 				if ( isset( $_POST['admbarpgn_network_settings'] ) ) {
-					// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Input is sanitized via wp_unslash() and sanitize_settings()
-					$input = wp_unslash( $_POST['admbarpgn_network_settings'] );
-					if ( is_array( $input ) ) {
+					// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Input is sanitized immediately below
+					$raw_input = wp_unslash( $_POST['admbarpgn_network_settings'] );
+					if ( is_array( $raw_input ) ) {
+						// Sanitize array keys and values immediately.
+						$input = array();
+						foreach ( $raw_input as $key => $value ) {
+							$sanitized_key            = sanitize_key( $key );
+							$input[ $sanitized_key ] = sanitize_text_field( $value );
+						}
 						$sanitized = $this->sanitize_settings( $input );
 						update_site_option( 'admbarpgn_network_settings', $sanitized );
 						echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Settings saved.', 'admin-bar-pagination' ) . '</p></div>';
@@ -259,9 +265,15 @@ class Admin {
 				}
 			} elseif ( ! is_multisite() && current_user_can( 'manage_options' ) ) {
 				if ( isset( $_POST['admbarpgn_settings'] ) ) {
-					// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Input is sanitized via wp_unslash() and sanitize_settings()
-					$input = wp_unslash( $_POST['admbarpgn_settings'] );
-					if ( is_array( $input ) ) {
+					// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized,WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Input is sanitized immediately below
+					$raw_input = wp_unslash( $_POST['admbarpgn_settings'] );
+					if ( is_array( $raw_input ) ) {
+						// Sanitize array keys and values immediately.
+						$input = array();
+						foreach ( $raw_input as $key => $value ) {
+							$sanitized_key            = sanitize_key( $key );
+							$input[ $sanitized_key ] = sanitize_text_field( $value );
+						}
 						$sanitized = $this->sanitize_settings( $input );
 						update_option( 'admbarpgn_settings', $sanitized );
 						echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Settings saved.', 'admin-bar-pagination' ) . '</p></div>';

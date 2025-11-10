@@ -76,8 +76,8 @@ if ( ! defined( 'ADMBARPGN_PLUGIN_URL' ) ) {
  * Define menu page slug
  */
 if ( ! defined( 'ADMBARPGN_MENU_PAGE_SLUG' ) ) {
-	$menu_slug = sanitize_key( 'admin-bar-pagination' );
-	define( 'ADMBARPGN_MENU_PAGE_SLUG', $menu_slug );
+	$admbarpgn_menu_slug = sanitize_key( 'admin-bar-pagination' );
+	define( 'ADMBARPGN_MENU_PAGE_SLUG', $admbarpgn_menu_slug );
 }
 
 /**
