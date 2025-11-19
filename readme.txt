@@ -1,5 +1,6 @@
 === Admin Bar Pagination ===
 Contributors: ferdysopian
+Donate link: https://www.buymeacoffee.com/ferdysopian
 Tags: admin, toolbar, pagination, responsive, mobile
 Requires at least: 5.0
 Tested up to: 6.8
@@ -20,6 +21,9 @@ Simple plugin that adds pagination to the WordPress admin toolbar. Perfect for s
 * Responsive design for mobile devices
 * Customizable items per page (1-10)
 * Lightweight and fast
+
+== Screenshots ==
+1. **Pagination & Settings**. Set how many items appear per page.
 
 == Installation ==
 
