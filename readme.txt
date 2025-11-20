@@ -1,7 +1,7 @@
 === Admin Bar Pagination ===
 Contributors: ferdysopian
 Donate link: https://www.buymeacoffee.com/ferdysopian
-Tags: admin, toolbar, pagination, responsive, mobile
+Tags: admin bar, adminbar, toolbar, pagination, responsive, ui, overflow, wrapping, menu items, mobile, clutter
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -9,21 +9,27 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adds pagination to the WordPress admin toolbar to manage menu items on smaller screens. Shows 3 menu items per page with navigation controls.
+Adds pagination to the WordPress admin toolbar so it never overflows, wraps, or spills into the page when too many items are shown. A clean alternative to admin bar overflow fixes and UI hacks.
 
 == Description ==
 
-Simple plugin that adds pagination to the WordPress admin toolbar. Perfect for sites with many plugins that clutter the admin bar.
+The WordPress admin bar gets crowded fast, plugins add their own items, menus stack up, and suddenly things wrap, overlap, or become unusable on mobile. This plugin solves that by adding simple pagination right inside the admin toolbar.
 
-**Features:**
-* Paginates admin bar menu items (3 per page)
-* Keeps WordPress logo and site name visible
-* Responsive design for mobile devices
-* Customizable items per page (1-10)
-* Lightweight and fast
+Instead of items overflowing or wrapping onto multiple lines, the toolbar stays compact and consistent. You choose how many items appear per page (1–10), and navigation controls handle the rest. Works on desktop and mobile without breaking the UI, layout, or user experience.
+
+Built for anyone tired of a cluttered or overflowing admin bar, especially on smaller screens or sites with many active plugins.
+
+**Features**
+- Adds pagination to the admin bar to prevent overflow or wrapping
+- Displays a fixed number of menu items per page (default: 3)
+- Keeps WordPress logo and site name visible at all times
+- Works on mobile and responsive layouts
+- Prevents admin bar items from overlapping content
+- Lightweight and loads only when the admin bar is displayed
+- Helps manage crowded or plugin-heavy admin toolbars
 
 == Screenshots ==
-1. **Pagination & Settings**. Set how many items appear per page.
+1. Pagination and settings screen, including items-per-page option.
 
 == Installation ==
 
@@ -34,16 +40,13 @@ Simple plugin that adds pagination to the WordPress admin toolbar. Perfect for s
 == Frequently Asked Questions ==
 
 = How many items per page? =
-
-Default is 3, but you can change it in settings (1-10).
+You can choose any number between 1 and 10. The default is 3.
 
 = Does this work on mobile? =
-
-Yes, it's fully responsive and touch-friendly.
+Yes. It's built for responsive layouts and tight mobile toolbars where overflow normally causes problems.
 
 = Will this slow down my site? =
-
-No, it's lightweight and only loads when needed.
+No. It's a lightweight UI fix and only loads when the admin toolbar is present.
 
 == Changelog ==
 
